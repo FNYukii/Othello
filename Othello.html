@@ -6,28 +6,27 @@
     <style>
       
       .board {
-        width: 600px;
-        height: 600px;
+        width: 672px;
+        height: 672px;
 
         flex-wrap: wrap;
         display: flex;
 
         margin: 0 auto;
 
-        
-
         display: flex;
         flex-wrap: wrap;
 
         background-color: green;
+        border: 2px solid black;
+        border-radius: 10px;
       }
       .frame {
-        margin: 2px ;
+        margin: 5px ;
         width: 70px;
         height: 70px;
         
         border: 2px solid black;
-        border-radius: 10px;
         
         cursor: pointer;
         transition: 0.8s;
@@ -47,8 +46,8 @@
     </style>
   </head>
   <body>
-    <div id="board" class="board"></div>
 
+    <div id="board" class="board"></div>
 
 
     <script>
@@ -58,7 +57,7 @@
 
       // const board = document.createElement('.board');
 
-      for (let i = 0; i < 40; i++) {          
+      for (let i = 0; i < 64; i++) {          
 
         const div = document.createElement('div');
         div.classList.add('frame');                    
