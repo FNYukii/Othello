@@ -4,7 +4,18 @@
     <meta charset="utf-8">
     <title>オセロ</title>
     <style>
-      body {
+      
+      .board {
+        width: 600px;
+        height: 600px;
+
+        flex-wrap: wrap;
+        display: flex;
+
+        margin: 0 auto;
+
+        
+
         display: flex;
         flex-wrap: wrap;
 
@@ -36,27 +47,35 @@
     </style>
   </head>
   <body>
-    <!-- 以下JavaScript -->
+    <div class="board"></div>
+
+
+
     <script>
-      'use strict';                  //JavaScriptを記述している事を宣言。ブラウザがエラーを検出しやすくなる。
+      'use strict';                  //JavaScriptを記述している事を宣言。
 
-      document.oncontextmenu = function () {return false;}
+      document.oncontextmenu = function () {return false;} //標準右クリック無効
 
-      const num = 136;
-      for (let i = 0; i < num; i++) {                          //繰り返し処理をしてくれるfor文。初期値i=0。iがnum未満の間、iに1ずつ足していく。つまり以下、for文内に記述してある1～５の処理をnum回繰り返す。
-        
-        const div = document.createElement('div');         //1. 定数lookboxに「document.createElement('box');」を代入。boxになんらかの変化を与える処理。
-        div.classList.add('frame');                     //2. 生成されたboxにCSS内の「firstBox」を適用する。
+      // const board = document.createElement('.board');
 
-        div.addEventListener('click', function(){              //4. boxに「EventListener」を追加。もしもclickを検出したら、
+      for (let i = 0; i < 40; i++) {          
+
+        const div = document.createElement('div');
+        div.classList.add('frame');                    
+
+        div.addEventListener('click', function(){ 
           div.classList.toggle('whiteStone');            
         } );
 
-        div.addEventListener('contextmenu', function(){              //4. boxに「EventListener」を追加。もしもclickを検出したら、
-          div.classList.toggle('blackStone');           
+        div.addEventListener('contextmenu', function(){
+          div.classList.toggle('blackStone');
         } );
 
-        document.body.appendChild(div);                    //５. ちなみにboxはbodyの子要素として生成する。
+        // 親要素（div）への参照を取得
+        var board = document.getElementsByClassName("board")[0];
+
+        // 追加
+        board.appendChild(div);          
 
       } //for end
     </script>
