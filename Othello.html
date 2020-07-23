@@ -8,13 +8,11 @@
         background-color: skyblue;
       }
       .othello-board {
-        margin: 30px auto;
+        margin: 20px auto;
         width: 592px;
 
         flex-wrap: wrap;
         display: flex;
-
-
 
         display: flex;
         flex-wrap: wrap;
@@ -72,8 +70,7 @@
         } );
 
         // 親要素（div）への参照を取得
-        var board = document.getElementById('othello-board');
-
+        const board = document.getElementById('othello-board');
         // 追加
         board.appendChild(div);          
 
