@@ -6,16 +6,15 @@
     <style>
       body {
         background-color: skyblue;
-        
       }
-      .board {
-        width: 672px;
-        height: 672px;
+      .othello-board {
+        margin: 30px auto;
+        width: 592px;
 
         flex-wrap: wrap;
         display: flex;
 
-        margin: 0 auto;
+
 
         display: flex;
         flex-wrap: wrap;
@@ -26,8 +25,8 @@
       }
       .frame {
         margin: 5px ;
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         
         border: 2px solid black;
         
@@ -50,7 +49,7 @@
   </head>
   <body>
 
-    <div id="board" class="board"></div>
+    <div id="othello-board" class="othello-board"></div>
 
 
     <script>
@@ -74,7 +73,7 @@
         } );
 
         // 親要素（div）への参照を取得
-        var board = document.getElementById('board');
+        var board = document.getElementById('othello-board');
 
         // 追加
         board.appendChild(div);          
